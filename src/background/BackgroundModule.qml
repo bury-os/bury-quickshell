@@ -34,7 +34,6 @@ Variants {
       source: wallpaper
       fillMode: Image.PreserveAspectCrop
       fallbacks: [
-        // TODO: absolute file path
         "bg_garden.jpeg"
       ]
     }
