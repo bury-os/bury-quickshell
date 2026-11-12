@@ -16,7 +16,7 @@
 
       # Bind the configuration files
       xdg.configFile."quickshell" = {
-        source = "./src";
+        source = ./src;
         recursive = true;
       };
     };
