@@ -1,16 +1,23 @@
 {
   description = "BuryOS Quickshell configuration";
 
-  outputs = { self }: {
-    homeManagerModules.default = { ... }: {
-      programs.quickshell = {
-        enable = true;
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+  };
 
-        configs = {
-          bury-os-quickshell = ./src;
-        };
+  outputs = { self, nixpkgs, ... }: {
+    packages."x86_64-linux".default = nixpkgs.legacyPackages."x86_64-linux".quickshell;
 
-        activeConfig = "bury-os-quickshell";
+    # Home-manager support
+    homeManagerModules.default = { pkgs, ... }: {
+      home.packages = [
+        pkgs.quickshell
+      ];
+
+      # Bind the configuration files
+      xdg.configFile."quickshell" = {
+        source = "./src";
+        recursive = true;
       };
     };
   };
