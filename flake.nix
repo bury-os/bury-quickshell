@@ -1,7 +1,7 @@
 {
   description = "BuryOS Quickshell configuration";
 
-  outputs = { self, nixpkgs, home-manager, ...}: {
+  outputs = { self }: {
     homeManagerModules.default = { ... }: {
       programs.quickshell = {
         enable = true;
