@@ -2,6 +2,7 @@
 
 This repository contains the Quickshell configuration for BuryOS.
 
+![Screenshot](./docs/screenshot.png)
 
 ## Usage
 
