@@ -6,7 +6,7 @@ This repository contains the Quickshell configuration for BuryOS.
 
 ## Usage
 
-### Manual
+### Manual install
 
 Copy or symlink the `./src` directory to `~/.config/quickshell`:
 
