@@ -6,9 +6,12 @@
   };
 
   outputs = { self, nixpkgs, ... }: {
-    packages."x86_64-linux".default = nixpkgs.legacyPackages."x86_64-linux".quickshell;
+    nixosModules.default = { pkgs, ... }: {
+      environment.sessionVariables = rec {
+        BURYOS_SHELL_BAR = "qs";
+      };
+    };
 
-    # Home-manager support
     homeManagerModules.default = { pkgs, ... }: {
       home.packages = [
         pkgs.quickshell
